@@ -43,9 +43,12 @@
         spokusa.kiev.com
     </h1>
 
-    <div class="text-start m-auto" style="width: 800px; height: 470px; position: relative; border: 1px solid purple;">
-        <img src="@/assets/images/macImagePresset.png" alt="Spokusa Image" style="width: 800px; position: absolute;">
-        <iframe src="https://test.spokusa.kiev.ua/" class="spokusaIFrame"></iframe>
+    <div class="text-start m-auto" style="max-width: 800px; max-height: 470px; border: 1px solid purple;">
+        <a href="https://spokusa.kiev.ua/">
+            <img src="@/assets/images/macImageSpokusa2.png" class="hvr-grow" alt="Spokusa site image" style="max-width: 100%;">
+        </a>
+        <!-- <img src="@/assets/images/macImagePresset.png" alt="Spokusa Image" style="width: 800px; position: absolute;">
+        <iframe src="https://test.spokusa.kiev.ua/" class="spokusaIFrame"></iframe> -->
         <!-- 2560x1600 -->
     </div>
 
@@ -56,7 +59,7 @@
                 Techs & languales used in this project:
             </h3>
             <div class="row">
-                <div class="col-6">
+                <div class="col-md-6">
                     <h5 class="mt-2">
                         <b>
                         Technologies:
@@ -74,7 +77,7 @@
                     </ul>
                 </div>
 
-                <div class=" col-6">
+                <div class="col-md-6">
                     <h5 class="mt-2">
                         <b>
                         Languages:
