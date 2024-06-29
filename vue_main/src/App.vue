@@ -2,7 +2,8 @@
 <!-- rgb(134, 134, 255) -->
     <div  class="navbar navbar-expand-lg fixed-top" style="background-color: rgb(20,67,186); height: 70px; margin: 0; padding: 0;">
         <div class="container-fluid my-auto">
-            <div class="btn-group position-absolute">
+			<!-- btn group START -->
+            <div class="btn-group ">
                 
                 <Transition name="swirl">            
                 <router-link to="/" v-show="!showNavBar" class="myHeaderBtnAnim4">
@@ -46,6 +47,16 @@
 
 
             </div>
+            <div class="ms-auto" >
+			
+				<div class="toggle slide">
+		 			<input id="languageCheckbox" type="checkbox" checked/>
+		  			<label for="languageCheckbox">
+	            		<div class="switch_card slide"></div>    
+          			</label>
+        		</div>
+
+			</div>
         </div>
     </div>
 
@@ -175,6 +186,66 @@ export default {
 
 <style scoped> 
 
+/* START of css styles of language switch */
+.toggle {
+    display:flex;
+    position:relative;
+    width:6rem;
+    height: 2rem; 
+    background: white;
+    align-self:center;
+    user-select:none;
+    
+    border-radius: 10px;
+  }
+  
+  .switch_card {
+    position:relative;  
+    background-image: url("@/assets/images/ukraine.svg");
+    background-size: cover; /* or contain, depending on your requirement */
+    background-position: center; /* Center the image */
+    transition:.4s;
+    width:50%;
+    height: 2rem;
+    pointer-events:none;
+    padding: auto;
+  }
+  
+  input:checked + label .switch_card {
+    background-image: url("@/assets/images/uk.svg");
+  }
+  
+    .toggle:after, .toggle:before {
+    flex:1;
+    text-align:center;
+    line-height:2rem;
+  }
+  .toggle:after {
+    content:"UA";
+  }
+  .toggle:before {
+    content:"EN";
+  }
+  
+  input { display:none; }
+  
+  label {
+    position:absolute;
+    top:0; left:0; right:0; bottom:0;
+    
+    cursor:pointer;
+  }
+  
+  
+  
+  
+  
+  
+  .slide input:checked + label .switch_card {
+    transform:translateX(3rem);
+  }
+
+  /* END of css styles of language switch */
 
 .myNavButtons {
     max-height: 60px;
