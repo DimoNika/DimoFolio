@@ -8,7 +8,7 @@
 
     <div style="max-width: 550px; margin-top: 150px;" class="mx-auto">
 
-        
+        <!-- First elem -->
         <div v-on:click="accClick('accRef1', 'accRef1Panel')">
             <button ref="accRef1" class="myaccordion"><span class="accText" style="color: grey;">04.11.2023 - <span style="margin: 0 1.4rem 0;">now</span> </span> - Spokusa.kiev.ua</button>
         </div>
@@ -19,26 +19,45 @@
                 <a href="#spokusa" >Details</a>
             </p>
         </div>
-        
+
+
+        <!-- Second elem -->
         <div v-on:click="accClick('accRef2', 'accRef2Panel')">
-            <button ref="accRef2" v-bind:class="{active: activeVar}" class="myaccordion"><span style="color: grey;">05.02.2024 - <span style="margin: 0 1.4rem 0;">now</span> </span> - Porfolio Site</button>
+            <button ref="accRef2" class="myaccordion"><span class="accText" style="color: grey;">22.05.2024 - <span style="margin: 0 1.4rem 0;">now</span> </span> - PhotoArch</button>
         </div>
         <div ref="accRef2Panel" class="panel">
+            <p class="text-start">
+                <b>PhotoArch</b> is my own photo archiving service. My website is built using the <b> Django </b> framework, offering secure and reliable storing service. 
+                <br>
+                <a href="#photoArch" >Details</a>
+            </p>
+        </div>
+
+
+        <!-- Third elem -->
+        <div v-on:click="accClick('accRef3', 'accRef3Panel')">
+            <button ref="accRef3" v-bind:class="{active: activeVar}" class="myaccordion"><span style="color: grey;">05.02.2024 - <span style="margin: 0 1.4rem 0;">now</span> </span> - Porfolio Site</button>
+        </div>
+        <div ref="accRef3Panel" class="panel">
             <p>second info</p>
         </div>
         
-        <div v-on:click="accClick('accRef3', 'accRef3Panel')">
-            <button ref="accRef3" v-bind:class="{active: activeVar}" class="myaccordion"><span style="color: grey;">27.11.2023 - 30.11.2023 </span> - CB_game</button>
+
+        <!-- Fourth elem -->
+        <div v-on:click="accClick('accRef4', 'accRef4Panel')">
+            <button ref="accRef4" v-bind:class="{active: activeVar}" class="myaccordion"><span style="color: grey;">27.11.2023 - 30.11.2023 </span> - CB_game</button>
         </div>
-        <div ref="accRef3Panel" class="panel">
+        <div ref="accRef4Panel" class="panel">
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
         </div>    
 
     </div>
 </div>  <!-- end of container for full scrreen size holding -->
 
-<div id="spokusa" > <!-- Spokusa site div -->
 
+<!-- Spokusa site div -->
+<div id="spokusa" style="border: 1px solid darkgreen; min-height: calc(100vh - 70px);"> 
+    <!-- calc(100%-70px) -->
     <h1 >
         spokusa.kiev.com
     </h1>
@@ -105,7 +124,80 @@
 
 
 
+</div> <!-- END of Spokusa site div -->
+
+</div>
+
+<!-- PhotoArch site div -->
+<div id="photoArch" style="border: 1px solid chartreuse; min-height: calc(100vh - 70px);"> 
+
+<h1 >
+    PhotoArch
+</h1>
+
+<div class="text-start m-auto" style="max-width: 800px; max-height: 470px; border: 1px solid purple;">
+    <a href="#photoArch">
+        <img src="@/assets/images/macImagePhotoArch.png" class="hvr-grow" alt="Spokusa site image" style="max-width: 100%;">
+    </a>
+    <!-- <img src="@/assets/images/macImagePresset.png" alt="Spokusa Image" style="width: 800px; position: absolute;">
+    <iframe src="https://test.spokusa.kiev.ua/" class="spokusaIFrame"></iframe> -->
+    <!-- 2560x1600 -->
+</div>
+
+
+<div class="row">
+    <div class="col-xxl-6">
+        <h3 class="mt-3">
+            Techs & languales used in this project:
+        </h3>
+        <div class="row">
+            <div class="col-md-6">
+                <h5 class="mt-2">
+                    <b>
+                    Technologies:
+                    </b>
+                </h5>
+                <ul class="text-start mt-4" style="min-width: 190px;">
+                    <b>
+                    <li><img class="techIcon" src="@/assets/images/icons/djangoIcon.svg" alt="Django icon">Django</li>
+                    <li><img class="techIcon" src="@/assets/images/icons/mySQLicon.svg">MySql</li>
+                    <li><img class="techIcon" src="@/assets/images/icons/BootstrapIcon.png">Bootstrap 5</li>
+                    <li><img class="techIcon" src="@/assets/images/icons/GitIcon.png">Git</li>
+                    <li><img class="techIcon" src="@/assets/images/icons/jQueryIcon.webp">jQuery</li>
+                    <li><img class="techIcon" src="@/assets/images/icons/ApacheIcon.png">Apache</li>
+                    </b>
+                </ul>
+            </div>
+
+            <div class="col-md-6">
+                <h5 class="mt-2">
+                    <b>
+                    Languages:
+                    </b>    
+                </h5>
+                <ul class="text-start mt-4" style="min-width: 326px;">
+                    <b>
+                    <li><img class="bigTechIcon" src="@/assets/images/icons/PythonIcon.png">Python 3.12</li>
+                    <li><img class="bigTechIcon" src="@/assets/images/icons/htmlcssjsIcon.png">html/JavaScript/CSS</li>
+                    </b>
+                </ul>
+            </div>
+
+        </div> 
+
+
+
     </div>
+    <div class="col-xxl-6">
+        <div style="margin-top: 3rem;"> <!-- Description -->
+            <b>Other</b> info has to be here
+        </div>
+        
+    </div>
+
+
+
+</div>
 </div>
     
 

@@ -147,7 +147,7 @@
             <!-- Start center content -->
             <div class="col-lg-8">
                 <!-- Элементы для центрирования -->
-                <div class="" style="text-align: center; border: 1px solid red; height: 2000px;">
+                <div class="" style="text-align: center; border: 1px solid red; height: 100%;">
                     
                     <router-view/>
                 </div>
