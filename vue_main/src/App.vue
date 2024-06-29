@@ -2,11 +2,38 @@
 <!-- rgb(134, 134, 255) -->
     <div  class="navbar navbar-expand-lg fixed-top" style="background-color: rgb(20,67,186); height: 70px; margin: 0; padding: 0;">
         <div class="container-fluid my-auto">
+            <div class="dropdown" v-show="showDropdown">
+                    <button class="btn my-dropdown-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Dropdown button
+                    </button>
+                    <ul class="dropdown-menu">
+                        <router-link to="/" class="dropdown-item">
+                            <span class>
+                                Home
+                            </span>
+                        </router-link>
+                        <router-link to="/projects" class="dropdown-item">
+                            <span class>
+                                Projects
+                            </span>
+                        </router-link>
+                        <router-link to="/about" class="dropdown-item">
+                            <span class>
+                                Info
+                            </span>
+                        </router-link>
+                        <router-link to="/Contact" class="dropdown-item">
+                            <span class>
+                                Contact
+                            </span>
+                        </router-link>
+                    </ul>
+                </div>
 			<!-- btn group START -->
             <div class="btn-group ">
                 
                 <Transition name="swirl">            
-                <router-link to="/" v-show="!showNavBar" class="myHeaderBtnAnim4">
+                    <router-link to="/" v-show="showTopNavBar" class="myHeaderBtnAnim4">
                         <div class="px-3 pborder-0 hvr-underline-from-center text-start w-100 myNavButtons" id="headerNavBtn1" style="width:max-content" >
                             <span class="hover-text" style="color: rgb(184,209,249);">
                                 Home
@@ -15,7 +42,7 @@
                     </router-link>
                 </Transition>
 
-                <Transition name="swirl" v-show="!showNavBar" class="myHeaderBtnAnim3">
+                <Transition name="swirl" v-show="showTopNavBar" class="myHeaderBtnAnim3">
                     <router-link to="/projects">
                         <div class="px-3 border-0 hvr-underline-from-center text-start w-100 myNavButtons" id="headerNavBtn2">
                             <span class="hover-text" style="color: rgb(184,209,249);">
@@ -25,7 +52,7 @@
                     </router-link>
                 </Transition>
 
-                <Transition name="swirl" v-show="!showNavBar" class="myHeaderBtnAnim2">
+                <Transition name="swirl" v-show="showTopNavBar" class="myHeaderBtnAnim2">
                     <router-link to="/about">
                         <div class="px-3 border-0 hvr-underline-from-center text-start w-100 myNavButtons" id="headerNavBtn3">
                             <span class="hover-text" style="color: rgb(184,209,249);">
@@ -36,7 +63,7 @@
                 </Transition>
 
                 <Transition name="swirl" style="color: rgb(184,209,249);">
-                    <router-link to="/contact" v-show="!showNavBar" class="myHeaderBtnAnim1">
+                    <router-link to="/contact" v-show="showTopNavBar" class="myHeaderBtnAnim1">
                         <div class="px-3 border-0 hvr-underline-from-center text-start w-100 myNavButtons" id="headerNavBtn4">
                             <span class="hover-text">
                                 Contact
@@ -61,7 +88,7 @@
     </div>
 
 
-    <div class="container-fluid" style="margin-top: 80px;">
+    <div class="container-fluid" style="margin-top: 80px;" >
         <Transition>
 
         </Transition>
@@ -72,7 +99,7 @@
                 <div class="btn-group-vertical"  style="position: absolute; min-width: 50px; min-height: 10px;">
                     
                 <Transition appear>
-                    <router-link to="/" v-show="showNavBar" class="myBtnAnim1">
+                    <router-link to="/" v-show="showLeftNavBar" class="myBtnAnim1">
                         <div class="p-3 border-0 hvr-sweep-to-right hvr-skew-forward text-start w-100" id="navBtn1">
                             <span class="hover-text">
                                 Home
@@ -82,7 +109,7 @@
                 </Transition>
 
                 <Transition appear>
-                    <router-link to="/projects" v-show="showNavBar" class="myBtnAnim2">
+                    <router-link to="/projects" v-show="showLeftNavBar" class="myBtnAnim2">
                         <div class="p-3 border-0 hvr-sweep-to-right hvr-skew-forward text-start w-100" id="navBtn2">
                             <span class="hover-text">
                                 Projects
@@ -93,7 +120,7 @@
                     
 
                 <Transition appear>
-                    <router-link to="/about" v-show="showNavBar" class="myBtnAnim3">
+                    <router-link to="/about" v-show="showLeftNavBar" class="myBtnAnim3">
                         <div class="p-3 border-0 hvr-sweep-to-right hvr-skew-forward text-start w-100" id="navBtn3">
                             <span class="hover-text" style="width: 100%;">
                                 Info
@@ -103,7 +130,7 @@
                 </Transition>
                 
                 <Transition appear>
-                    <router-link to="/contact" v-show="showNavBar" class=" myBtnAnim4">
+                    <router-link to="/contact" v-show="showLeftNavBar" class=" myBtnAnim4">
                         <div class="p-3 border-0 hvr-sweep-to-right hvr-skew-forward text-start w-100" id="navBtn4" >
                             <span class="hover-text">
                                 Contact 
@@ -151,44 +178,48 @@ export default {
     data() {
         return {
             activeComp: '',
-            showNavBar: true,
+            showTopNavBar: false,
+            showLeftNavBar: true,
+            showDropdown: false,
         }
     },
 
     methods: {
         
-        checkScrollig() {
+        checkButtonsState() {
             console.log(window.scrollY);
-
             console.log(this.showNavBar);
-            if (window.scrollY > 2 || window.innerWidth < 1000) {
-                this.showNavBar = false;
+            
+            if (window.innerWidth < 600) {
+                this.showTopNavBar = false;
+                this.showLeftNavBar = false;
+                this.showDropdown = true;
+                console.log("dropdown")
+                return
+            } else if (window.scrollY > 2 || window.innerWidth < 1000) {
+                this.showTopNavBar = true;
+                this.showLeftNavBar = false;
+                this.showDropdown = false;
+                return
             } else {
-                this.showNavBar = true;
+                this.showTopNavBar = false;
+                this.showLeftNavBar = true;
+                this.showDropdown = false;
             }
         },
-
-        checkResizing() {
-            console.log(this.showNavBar);
-            if (window.scrollY > 2 || window.innerWidth < 1000) {
-                this.showNavBar = false;
-            } else {
-                this.showNavBar = true;
-            }
-        }
     },
 
     mounted: function () {
 
         document.addEventListener("DOMContentLoaded", () => {
             console.log("onload")
-            this.checkResizing();
-            this.checkResizing();
+            
+            this.checkButtonsState();
         });
 
-        window.addEventListener('scroll', this.checkScrollig),
+        window.addEventListener('scroll', this.checkButtonsState),
 
-        window.addEventListener('resize', this.checkResizing)
+        window.addEventListener('resize', this.checkButtonsState)
 
     },
     computed : {
@@ -202,6 +233,10 @@ export default {
 </script>
 
 <style scoped> 
+
+.my-dropdown-btn {
+    background-color: rgb(184,209,249)
+}
 
 /* START of css styles of language switch */
 .toggle {
