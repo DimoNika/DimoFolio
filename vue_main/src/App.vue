@@ -145,6 +145,8 @@
 <script>
 
 
+
+
 export default {
     data() {
         return {
@@ -152,9 +154,10 @@ export default {
             showNavBar: true,
         }
     },
-    mounted: function () {
+
+    methods: {
         
-        window.addEventListener('scroll', () => {
+        checkScrollig() {
             console.log(window.scrollY);
 
             console.log(this.showNavBar);
@@ -163,15 +166,29 @@ export default {
             } else {
                 this.showNavBar = true;
             }
-        }),
-        window.addEventListener('resize', () => {
+        },
+
+        checkResizing() {
             console.log(this.showNavBar);
             if (window.scrollY > 2 || window.innerWidth < 1000) {
                 this.showNavBar = false;
             } else {
                 this.showNavBar = true;
             }
-        })
+        }
+    },
+
+    mounted: function () {
+
+        document.addEventListener("DOMContentLoaded", () => {
+            console.log("onload")
+            this.checkResizing();
+            this.checkResizing();
+        });
+
+        window.addEventListener('scroll', this.checkScrollig),
+
+        window.addEventListener('resize', this.checkResizing)
 
     },
     computed : {
