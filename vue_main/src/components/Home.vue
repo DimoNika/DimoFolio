@@ -7,6 +7,8 @@
     
     <p>19 y.o. Developer</p>
     
+    <span>{{ $t("test1") }}</span>
+    <!-- <p> {{ store.count }}</p> -->
     <!-- <p>Developer</p> -->
 
 

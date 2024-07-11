@@ -77,7 +77,7 @@
             <div class="ms-auto" >
 			
 				<div class="toggle slide">
-		 			<input id="languageCheckbox" type="checkbox" checked/>
+		 			<input id="languageCheckbox" @click="changeLang" type="checkbox" />
 		  			<label for="languageCheckbox">
 	            		<div class="switch_card slide"></div>    
           			</label>
@@ -171,10 +171,14 @@
 
 <script>
 
+    import { useStore } from './stores/store';
 
-
-
-export default {
+    export default {
+    setup() {
+        const store = useStore();
+        console.log(store)
+        return { store }
+    },
     data() {
         return {
             activeComp: '',
@@ -185,8 +189,42 @@ export default {
     },
 
     methods: {
-        
-        checkButtonsState() {
+        btnLangSetup() {
+
+            let localeCookie = Cookies.get('locale');
+
+            if (localeCookie == undefined) {
+                document.getElementById("languageCheckbox").checked = true;
+                
+                Cookies.set('locale', 'en');
+                this.store.locale = Cookies.get("locale");
+
+            } else if (localeCookie == 'en') {
+                document.getElementById("languageCheckbox").checked = true;
+                console.log('localeCookie is en')
+                
+                this.store.locale = Cookies.get("locale");
+            } else {
+                document.getElementById("languageCheckbox").checked = false;
+                this.store.locale = Cookies.get("locale");
+                
+            }
+
+        },
+        // langeuage btn switch funck onclick
+        changeLang() {
+            if (document.getElementById("languageCheckbox").checked == true) {
+                Cookies.set("locale", "en");
+                
+                
+            } else {
+                Cookies.set("locale", "ua");
+            }
+            
+            this.store.locale = Cookies.get("locale")
+        },
+
+        checkNavButtonsState() {
             console.log(window.scrollY);
             console.log(this.showNavBar);
             
@@ -211,16 +249,20 @@ export default {
 
     mounted: function () {
 
+        
+        
         document.addEventListener("DOMContentLoaded", () => {
             console.log("onload")
             
-            this.checkButtonsState();
+            this.btnLangSetup();
+
+            this.checkNavButtonsState();
         });
 
-        window.addEventListener('scroll', this.checkButtonsState),
+        window.addEventListener('scroll', this.checkNavButtonsState),
 
-        window.addEventListener('resize', this.checkButtonsState)
-
+        window.addEventListener('resize', this.checkNavButtonsState)
+        
     },
     computed : {
         
