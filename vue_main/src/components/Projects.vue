@@ -36,10 +36,14 @@
 
         <!-- Third elem -->
         <div v-on:click="accClick('accRef3', 'accRef3Panel')">
-            <button ref="accRef3" v-bind:class="{active: activeVar}" class="myaccordion"><span style="color: grey;">05.02.2024 - <span style="margin: 0 1.4rem 0;">now</span> </span> - Porfolio Site</button>
+            <button ref="accRef3" v-bind:class="{active: activeVar}" class="myaccordion"><span style="color: grey;">27.10.2023 - <span >30.10.2023</span> </span> - CB_game</button>
         </div>
         <div ref="accRef3Panel" class="panel">
-            <p>second info</p>
+            <p class="text-start">
+                <b>CB_game</b> is small game about guessing right number, written on raw js, css and html.
+            <br>
+            <a href="#cb_game" >Details</a>
+            </p>
         </div>
         
 
@@ -63,7 +67,7 @@
     </h1>
 
     <div class="text-start m-auto" style="max-width: 800px; max-height: 470px; border: 1px solid purple;">
-        <a href="https://spokusa.kiev.ua/">
+        <a target="_blank" href="https://spokusa.kiev.ua/">
             <img src="@/assets/images/macImageSpokusa2.png" class="hvr-grow" alt="Spokusa site image" style="max-width: 100%;">
         </a>
         <!-- <img src="@/assets/images/macImagePresset.png" alt="Spokusa Image" style="width: 800px; position: absolute;">
@@ -163,7 +167,8 @@
                     <li><img class="techIcon" src="@/assets/images/icons/mySQLicon.svg">MySql</li>
                     <li><img class="techIcon" src="@/assets/images/icons/BootstrapIcon.png">Bootstrap 5</li>
                     <li><img class="techIcon" src="@/assets/images/icons/GitIcon.png">Git</li>
-                    <li><img class="techIcon" src="@/assets/images/icons/jQueryIcon.webp">jQuery</li>
+                    <!-- <li><img class="techIcon" src="@/assets/images/icons/jQueryIcon.webp">jQuery</li> -->
+                    <li><img class="techIcon" src="@/assets/images/icons/fancyappsIcon.svg">fancyapps/fancybox</li>
                     <li><img class="techIcon" src="@/assets/images/icons/ApacheIcon.png">Apache</li>
                     </b>
                 </ul>
@@ -190,7 +195,56 @@
     </div>
     <div class="col-xxl-6">
         <div style="margin-top: 3rem;"> <!-- Description -->
-            <b>Other</b> info has to be here
+            Developed a <b>comprehensive photo archiving website</b>, 
+            designed to efficiently organize, store, and display images. 
+            <b>User-friendly interface and responsive design</b> for optimal viewing 
+            across all devices. <b>Utilized modern web development technologies</b> 
+            and seamless user experience.
+        </div>
+        
+    </div>
+
+
+
+</div>
+</div>
+<!-- CB_game site div -->
+<div id="cb_game" style="border: 1px solid chartreuse; min-height: calc(100vh - 70px);"> 
+
+<h1 >
+    CB_game
+</h1>
+
+<div class="text-start m-auto" style="max-width: 800px; max-height: 470px; border: 1px solid purple;">
+    <a target="_blank" href="https://dimonika.github.io/CB_game/">
+        <img src="@/assets/images/macImageCBgame.png" class="hvr-grow" alt="Spokusa site image" style="max-width: 100%;">
+    </a>
+    <!-- <img src="@/assets/images/macImagePresset.png" alt="Spokusa Image" style="width: 800px; position: absolute;">
+    <iframe src="https://test.spokusa.kiev.ua/" class="spokusaIFrame"></iframe> -->
+    <!-- 2560x1600 -->
+</div>
+
+
+<div class="row">
+    <div class="col-xxl-6">
+        <h3 class="mt-3">
+            Techs & languages used in this project:
+        </h3>
+        <h5 class="mt-2 ms-4 text-start">
+            <b>
+                Languages:
+            </b>    
+        </h5>
+        <b>
+        <ul class="text-start">
+            <li><img class="bigTechIcon" src="@/assets/images/icons/htmlcssjsIcon.png">html/JavaScript/CSS</li>
+        </ul>
+        </b>    
+    </div>
+    <div class="col-xxl-6">
+        <div style="margin-top: 3rem;"> <!-- Description -->
+            <b>This is a small project which is written on raw JS</b>. It was first time I used JS. I have learned JS basics developing this project.
+            <b>This game is about guessing right number.</b>
         </div>
         
     </div>
