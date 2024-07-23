@@ -1,9 +1,73 @@
 {
     "home": {
         "name":"Dimo Nika",
-        "age":" 19 y.o. Developer",
-        
-        "description": "description in english"
+        "ageAndProf":" 19 y.o. Web developer",
+        "description0": "Hello! ",
+        "description1": "I am junior-level full-stack web developer.",
+        "description2": "I love writting code and learn new things, now i do this as a hobby.",
+        "description3": "My dream is to make a career out of it and make something useful for humanity.",
+
+        "detailedAboutLink": "More detailed information about me",
+        "contactLink": "Contact me"
+    },
+
+    
+    "projects": {
+        "heading": "Over this time I developed some projects to certain level.",
+        "now": "now",
+
+        "spokusaDesc1": "is eCommerce site on curtains theme. My website is built using the",
+        "spokusaDesc2": " framework, offering a seamless and efficient user experience.",
+
+        "photoArchDesc1": "is my own photo archiving service. My website is built using the",
+        "photoArchDesc2": "framework, offering secure and reliable storing service.",
+
+        "cbgameDesc1": " is small game about guessing right number, written on raw js, css and html.",
+
+
+        "photoArchDetailedDesc1": "Developed a ",
+        "photoArchDetailedDesc2": "comprehensive photo archiving website",
+        "photoArchDetailedDesc3": ", designed to efficiently organize, store, and display images.",
+        "photoArchDetailedDesc4": "User-friendly interface and responsive design",
+        "photoArchDetailedDesc5": " for optimal viewing across all devices. ",
+        "photoArchDetailedDesc6": "Utilized modern web development technologies",
+        "photoArchDetailedDesc7": "and seamless user experience.",
+
+
+        "cbgameDetailedDesc1": "This is a small project which is written on raw JS.",
+        "cbgameDetailedDesc2": "It was first time I used JS. I have learned JS basics developing this project.",
+        "cbgameDetailedDesc3": "This game is about guessing right number.",
+
+
+
+
+        "techLangsUsed": "Techs & languales used in this project:",
+        "techs": "Tecnologies:",
+        "langs": "Languages: "
+
+    },
+
+
+    "about": {
+        "mainTechSkills": "Main technical skills:",
+        "mainLangs": "Programming languages: Python, HTML/CSS/JS.",
+        "mainFrameTools": "Web frameworks/tools: Django, Django REST, Vue.js, Bootstrap, JQuery.",
+        "mainOS": "Operating systems: Windows, Linux.",
+        "mainDB": "Database systems: MySQL.",
+        "mainVCS": "Version control systems: Git.",
+
+        "otherTechSkills": "Other technical skills:",
+        "otherLangs": "Programming languages (begginer level): C#, C/C++, Java.",
+        "otherTG": "TelegramBots: pyTelegramBotAPI, Telethon.",
+
+        "educationWord": "Education",
+        "KITUname": "”Professional College of Engineering, Management and Land Management of the National Aviation University” in Kyiv.",
+        "KITUplace": "c. Kyiv",
+        "KITUdate": "2020 - 2024",
+        "KITUspecialization": "Professional junior bachelor's degree in specialty - 121 Software Engineering.",
+
+        "projectsHref": "Projects",
+        "projectsDeveloped": " I developed using this knowledge."
 
     }
 }
